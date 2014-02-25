@@ -2,13 +2,13 @@
   require.config({
     baseUrl: '/javascripts/',
     paths: {
-      jquery: '/javascripts/libs/jquery-2.1.0.min',
-      backbone: '/javascripts/libs/backbone-min',
-      underscore: '/javascripts/libs/underscore-min',
-      marionette: '/javascripts/libs/backbone.marionette.min',
-      models: '/javascripts/App/models/',
-      collections: '/javascripts/App/collections/',
-      views: '/javascripts/App/views/'
+      jquery: 'libs/jquery-2.1.0.min',
+      backbone: 'libs/backbone-min',
+      underscore: 'libs/underscore-min',
+      marionette: 'libs/backbone.marionette.min',
+      models: 'App/models',
+      collections: 'App/collections',
+      views: 'App/views'
     },
     shim: {
       underscore: {
