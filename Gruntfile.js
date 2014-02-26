@@ -21,6 +21,17 @@ module.exports = function(grunt) {
                 ext: '.js'
             }
         },
+        eco: {
+            app: {
+                options: {
+                    amd: true,
+                    basePath:"public/assets/coffee/App"
+                },
+                files: {
+                    'public/javascripts/App/templates.js': 'public/assets/coffee/App/templates/*.eco'
+                }
+            }
+        },
         watch: {
             //run unit tests with karma (server needs to be already running)
             karma: {
@@ -30,6 +41,10 @@ module.exports = function(grunt) {
             scripts: {
                 files: 'public/assets/coffee/App/**/*.coffee',
                 tasks: ['coffee']
+            },
+            eco: {
+                files: 'public/assets/coffee/App/templates/**/*.eco',
+                tasks: ['eco']
             }
         }
     });
@@ -38,6 +53,7 @@ module.exports = function(grunt) {
     grunt.loadNpmTasks('grunt-contrib-coffee');
     grunt.loadNpmTasks('grunt-contrib-watch');
     grunt.loadNpmTasks('grunt-karma');
+    grunt.loadNpmTasks('grunt-eco');
     grunt.loadNpmTasks('grunt-contrib-requirejs');
 
     // Default task(s).

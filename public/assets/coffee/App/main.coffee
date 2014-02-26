@@ -1,13 +1,14 @@
 require.config
-  baseUrl: '/javascripts/'
+  baseUrl: 'javascripts/'
   paths:
-    jquery: '/javascripts/libs/jquery-2.1.0.min'
-    backbone: '/javascripts/libs/backbone-min'
-    underscore: '/javascripts/libs/underscore-min'
-    marionette: '/javascripts/libs/backbone.marionette.min'
-    models: '/javascripts/App/models/'
-    collections: '/javascripts/App/collections/'
-    views: '/javascripts/App/views/'
+    jquery: 'libs/jquery-2.1.0.min'
+    backbone: 'libs/backbone-min'
+    underscore: 'libs/underscore-min'
+    marionette: 'libs/backbone.marionette.min'
+    models: 'App/models'
+    collections: 'App/collections'
+    views: 'App/views'
+    templates: 'App/templates'
   shim:
     underscore:
       exports: '_'
@@ -18,7 +19,7 @@ require.config
       deps: ['backbone', 'underscore', 'jquery']
       exports: 'Backbone.Marionette'
 
-require ['models/MovieModel'], (MovieModel)->
-  console.warn new MovieModel
+require ['models/MovieModel', 'templates'], (MovieModel, JST)->
+  console.warn JST({num: 293648})
   movie = new MovieModel
   movie.fetch()

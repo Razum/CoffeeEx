@@ -1,6 +1,6 @@
 (function() {
   require.config({
-    baseUrl: '/javascripts/',
+    baseUrl: 'javascripts/',
     paths: {
       jquery: 'libs/jquery-2.1.0.min',
       backbone: 'libs/backbone-min',
@@ -8,7 +8,8 @@
       marionette: 'libs/backbone.marionette.min',
       models: 'App/models',
       collections: 'App/collections',
-      views: 'App/views'
+      views: 'App/views',
+      templates: 'App/templates'
     },
     shim: {
       underscore: {
@@ -25,9 +26,11 @@
     }
   });
 
-  require(['models/MovieModel'], function(MovieModel) {
+  require(['models/MovieModel', 'templates'], function(MovieModel, JST) {
     var movie;
-    console.warn(new MovieModel);
+    console.warn(JST({
+      num: 293648
+    }));
     movie = new MovieModel;
     return movie.fetch();
   });
